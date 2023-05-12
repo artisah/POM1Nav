@@ -67,14 +67,15 @@ public class ElementUtil {
 
 	public WebElement getElement(By locator) {
 		WebElement ele = driver.findElement(locator);
-		if(Boolean.parseBoolean(DriverFactory.highlight)) {
-			jsUtil.flash(ele);
-		}
+		
+//		if(Boolean.parseBoolean(DriverFactory.highlight)) {
+//			jsUtil.flash(ele);
+//		}
 		return ele;
 	}
 
 	public void doClick(By locator) {
-		System.out.println("click on : " + locator);
+		//System.out.println("click on : " + locator);
 		getElement(locator).click();
 
 	}

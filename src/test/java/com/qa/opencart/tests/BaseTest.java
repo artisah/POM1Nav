@@ -7,7 +7,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import com.qa.opencart.factory.DriverFactory;
+import com.qa.opencart.pages.DashboardPage;
 import com.qa.opencart.pages.LoginPage;
+import com.qa.opencart.pages.RegisterPage;
 import com.qa.opencart.utils.Constants;
 
 public class BaseTest {
@@ -18,6 +20,8 @@ public class BaseTest {
 	
 	// Intialized at class level, so that can be accessed from LoginPageTest, when extends by BaseTest
 	LoginPage loginPage;
+	DashboardPage accPage;
+	RegisterPage registerPage;
 	
 	@BeforeTest
 	public void setup() {
@@ -34,3 +38,8 @@ public class BaseTest {
 	}
 
 }
+
+
+
+
+

@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+//import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
 	
@@ -29,17 +29,17 @@ public class DriverFactory {
 		String browserName = prop.getProperty("browser").trim();
 		String url = prop.getProperty("url").trim();
 		
-		highlight = prop.getProperty("highlight").trim();
+	//	highlight = prop.getProperty("highlight").trim();
 		
 		System.out.println("browsername is: " + browserName);
 		
 		if (browserName.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
+		//	WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			
 		} 
 		else if (browserName.equalsIgnoreCase("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			//WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			
 		}
