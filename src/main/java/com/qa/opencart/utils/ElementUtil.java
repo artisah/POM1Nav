@@ -73,10 +73,20 @@ public class ElementUtil {
 //		}
 		return ele;
 	}
+	
+	public WebElement getElementWithWait(By locator) {
+		WebElement ele = waitForElementVisible(locator, 5);
+		return ele;
+	}
 
 	public void doClick(By locator) {
 		//System.out.println("click on : " + locator);
 		getElement(locator).click();
+
+	}
+	
+	public void doClickWithWait(By locator) {
+		getElementWithWait(locator).click();
 
 	}
 
@@ -96,6 +106,9 @@ public class ElementUtil {
 
 	public String doGetText(By locator) {
 		return getElement(locator).getText();
+	}
+	public String doGetTextWithWait(By locator) {
+		return getElementWithWait(locator).getText();
 	}
 
 	public String doGetAttribute(By locator, String attrName) {

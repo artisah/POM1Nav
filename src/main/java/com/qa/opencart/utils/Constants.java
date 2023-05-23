@@ -20,7 +20,8 @@ public class Constants {
 	
 	public static final int DEFAULT_TIME_OUT = 5;
 	public static final String REGISTER_PAGE_URL_FRACTION = "auth/register";
-	public static final String REGISTER_PAGE_SUCCESS_MESSAGE = "Account Created Successfully";
+	public static final String REGISTER_PAGE_SUCCESS_MESSAGE = "Register";
+	public static final String REGISTER_SHEET_NAME = "registration";
 	
 			
 

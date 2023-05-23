@@ -23,6 +23,7 @@ public class RegisterPage {
 	private By eigteenYesrOldCheckbox = By.cssSelector(" form > div:nth-child(5) > div.col-md-1 > input");
 	private By registerBtn =  By.id("login");
 	private By accountCreatedSuccessMsg = By.xpath("/html/body/app-root/app-register/div[1]/section[2]/div/div[2]/h1");
+	                                                
 	private By loginButtonAfterAccountCreation = By.xpath("/html/body/app-root/app-register/div[1]/section[2]/div/div[2]/button");
 	//private By registerLink = By.linkText("Register");
 	private By loginPageRegisterLink = By.linkText("Register here");
@@ -56,13 +57,22 @@ public class RegisterPage {
 		
 		eleUtil.doClick(eigteenYesrOldCheckbox);
 		eleUtil.doClick(registerBtn);
+		//eleUtil.waitForElementVisible(accountCreatedSuccessMsg, 5)
 		
-		String successMsg = eleUtil.doGetText(accountCreatedSuccessMsg);
-		System.out.println(successMsg);
+		String successMsg = eleUtil.doGetTextWithWait(accountCreatedSuccessMsg);
+		System.out.println("success message after registration is:   " + successMsg);
 		
+//		String successMsg = eleUtil.doGetAttribute(accountCreatedSuccessMsg, "innerHTML");
+//		System.out.println("innerHTML     "  +successMsg);
+
 		if (successMsg.contains(Constants.REGISTER_PAGE_SUCCESS_MESSAGE)){
-			eleUtil.doClick(loginButtonAfterAccountCreation);
-			eleUtil.doClick(loginPageRegisterLink);
+			System.out.println("Inside   ");
+			//Thread.sleep(9000);
+			//eleUtil.doClick(loginButtonAfterAccountCreation);
+			eleUtil.doClickWithWait(loginButtonAfterAccountCreation);
+			//Thread.sleep(9000);
+			//eleUtil.doClick(loginPageRegisterLink);
+			eleUtil.doClickWithWait(loginPageRegisterLink);
 			return true;
 			
 		}
